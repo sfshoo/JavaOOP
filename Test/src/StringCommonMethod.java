@@ -128,6 +128,32 @@ public class StringCommonMethod {
 		int endIndex = user.lastIndexOf(".");
 		System.out.println(user.substring(beginIndex, endIndex));// 张三
 
+//		格式化字符串
+//		public static String format(String format,各种类型...args)// 根据指定结构进行文本格式化显示
+//		%s字符串，%c字节，%d整数，%f浮点数
+		String name = "张三";
+		int age = 18;
+		double score = 98.7654321;
+		String strF = String.format("姓名：%s, 年龄：%d, 成绩：%5.2f", name, age, score);
+		System.out.println(strF);
+
+//		String其他方法
+//		public String concat(String string);// 字符串连接
+//		public String intern()// 字符串入池
+//		public boolean isEmpty()// 判断空字符串(有实例化对象)
+//		public int length()// 计算字符串长度
+//		public String trim()// 去除左右空格
+//		public String toUpperCase()// 转大写
+//		public String toLowerCase()// 转小写	
+		System.out.println(str.isEmpty());
+		String strG = "   Hello World   ";
+		System.out.println(strG.length());
+		System.out.println(strG.trim().length());
+		System.out.println(strG.toUpperCase());
+		System.out.println(strG.toLowerCase());
+
+		System.out.println(initCap("hello"));
+		System.out.println(initCap("m"));
 	}
 
 	public static boolean isNumber(String string) {
@@ -138,6 +164,16 @@ public class StringCommonMethod {
 			}
 		}
 		return true;
+	}
+
+	public static String initCap(String str) {
+		if (str == null || "".equals(str)) {
+			return str;
+		}
+		if (str.length() == 1) {
+			return str.toUpperCase();
+		}
+		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 
 }
